@@ -1,0 +1,1 @@
+This is as bare bones angular nodejs application as possible.
