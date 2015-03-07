@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Angular barebones",
   "scripts": {
-    "postinstall": "bower install",
+    "postinstall": "./node_modules/bower/bin/bower install",
     "start": "gulp",
     "test": "gulp test"
   },
@@ -13,6 +13,7 @@
     "express": "^4.12.0"
   },
   "devDependencies": {
+    "bower": "^1.3.12",
     "chai": "^2.1.0",
     "dalek-cli": "0.0.5",
     "dalekjs": "0.0.9",
