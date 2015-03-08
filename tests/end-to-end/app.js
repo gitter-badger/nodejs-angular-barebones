@@ -1,9 +1,15 @@
 'use strict';
 module.exports = {
-    'angular application should be running': function (test) {
-        test
-            .open('http://localhost:3000')
-			.assert.title('angular barebones')
-            .done();
+    'results from google search are proxied': function (test) {
+      	test
+   	.open('http://localhost:3000')
+	.assert.title('angular barebones')
+	.type('#q', 'angularjs')
+	.click('#search')
+	.assert.chain()
+		.exists('.result', 'results have been populated')
+		.text('.result a:first').to.contain('AngularJS — Superheroic JavaScript MVW Framework', 'angularjs official page is first result')
+	.end()
+        .done();
     }
 };

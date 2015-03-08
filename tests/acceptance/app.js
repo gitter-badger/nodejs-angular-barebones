@@ -14,4 +14,15 @@ describe('application', function(){
 				.end(done);
 		});
 	});
+
+    describe('search', function(){
+        it('should return search results', function(done){
+            request(app)
+                .get('/search?q=angularjs')
+                .expect(200)
+				.expect('Content-Type', 'application/json; charset=utf-8')
+                .expect({results:[{text:"AngularJS — Superheroic JavaScript MVW Framework"}]})
+                .end(done);
+        });
+    });
 });
