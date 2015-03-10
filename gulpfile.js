@@ -6,7 +6,7 @@ var dalek = require('gulp-dalek');
 var port = 3000;
 
 gulp.task('test', function () {
-    return gulp.src('tests/acceptance/*.js', {read: false})
+    return gulp.src('tests/{unit,acceptance}/*.js', {read: false})
         .pipe(mocha({reporter: 'spec', timeout: 10000}));
 });
 
