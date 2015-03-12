@@ -4,6 +4,12 @@ var request = require('supertest');
 var express = require('express');
 var app = require('../../app');
 
+var responseContainsResultsForAngular = function (res) {
+    if (res.body.results[0].text !== 'AngularJS — Superheroic JavaScript MVW Framework') {
+        return 'AngularJs home page not in results set';
+    }
+};
+
 describe('application', function(){
 	describe('root', function(){
 		it('should return 200', function(done){
@@ -21,7 +27,7 @@ describe('application', function(){
                 .get('/search?q=angularjs')
                 .expect(200)
 				.expect('Content-Type', 'application/json; charset=utf-8')
-                .expect({results:[{text:"AngularJS — Superheroic JavaScript MVW Framework"}]})
+                .expect(responseContainsResultsForAngular)
                 .end(done);
         });
     });
