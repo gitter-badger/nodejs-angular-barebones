@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Angular barebones",
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install",
+    "postinstall": "bower install",
     "start": "gulp",
     "test": "gulp test",
     "serve": "node bin/www"
