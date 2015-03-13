@@ -4,9 +4,8 @@
   "description": "Angular barebones",
   "scripts": {
     "postinstall": "bower install",
-    "start": "gulp",
-    "test": "gulp test",
-    "serve": "node bin/www"
+    "start": "node bin/www",
+    "test": "gulp test"
   },
   "author": "Uldis Sturms",
   "license": "ISC",
